@@ -13,13 +13,13 @@ const headers = {
 
 async function getCommitCounts() {
   try {
-    // Step 3: Retrieve branch information
+    // Retrieve branch information
     const branchesURL = `${baseURL}/repos/${owner}/${repo}/branches`;
     const branchesResponse = await axios.get(branchesURL, { headers });
     const branches = branchesResponse.data;
 
     console.log(branches);
-    // Step 5-7: Retrieve commits and count commits per author
+    // Retrieve commits and count commits per author
     const commitCounts = {};
     for (const branch of branches) {
       const branchName = branch.name;
